@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hompage</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body{
+            background-color:lightblue;
+            align-items: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            align-items: center;
+        }
+
+        th, td {
+            border: 1px solid #5e5e5e;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Employee Hompage</h1>
+
+    <label for="filterInput">Filter:</label>
+    <input type="text" id="filterInput" oninput="applyFilter()">
+
+    <table id="dataTable" border="1">
+        <h1>Employee Information</h1>
+        <thead>
+            <tr>
+                <th>EmployeeID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Salary</th>
+                <th>Hire Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table><br>
+    <a href="/">Back to login page</a>
+
+    <script>
+        // Load table names into the dropdown
+        $(document).ready(function () {
+            $.get('/get_columns?table_name=employee', function (columns) {
+                // Load column names into the table
+                var headerRow = '<tr>';
+                for (var i = 0; i < columns.length; i++) {
+                    headerRow += '<th>' + columns[i] + '</th>';
+                }
+                headerRow += '</tr>';
+                $('#dataTable').append(headerRow);
+            });
+        });
+
+
+        function applyFilter() {
+            var filterValue = $('#filterInput').val().toLowerCase();
+
+            // Loop through each row and hide/show based on the filter
+            $('#dataTable tr:gt(0)').each(function () {
+                var rowText = $(this).text().toLowerCase();
+                if (rowText.includes(filterValue)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

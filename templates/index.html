@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Creation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="login-container">
+    <h1>New User Registration Form</h1>
+
+    <form action="/newuser" method="post">
+        <fieldset>
+            <legend>Enter details:</legend>
+
+        <label for="firstName">Enter your First Name:</label>
+        <input type="text" id="firstName" name="FIRST_NAME" required><br><br>
+
+        <label for="lastName">Enter your Last Name:</label>
+        <input type="text" id="lastName" name="LAST_NAME" required><br><br>
+
+        <label for="emailid">Your Email Address:</label>
+        <input type="email" id="emailid" name="EMAILID" required><br><br>
+
+        <label for="password">Enter the Password:</label>
+        <input type="password" id="password" name="PASSWORD" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,}" required
+        title="Password must contain at least 8 characters, including 1 capital letter, 1 special character, and 1 number">
+        <br><br>
+
+        <label for="security_question">Security Question:-</label><br>
+        <label for="security_question">Enter your favorite place name:</label>
+        <input type="text" id="security_question" name="SECURITY_QUESTION" required><br><br>
+
+        <label for="submitBtn"></label>
+        <button type="submit" id="submitBtn">Submit</button><br><br>
+        <button type="reset" id="restBtn">Reset</button>
+        <br>
+        <a href="/">Back to login page</a>
+        <h3>{{context}}</h3>
+        </fieldset>
+    </form>
+    </div>
+</body>
+</html>

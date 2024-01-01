@@ -14,7 +14,7 @@
             {% if messages %}
                 <ul class="flash-messages">
                     {% for message in messages %}
-                        <li class="flash-message {{ message[1] }}">{{ message[0] }}</li>
+                        <li class="flash-message {{ message[1] }}">{{ message }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -26,6 +26,8 @@
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
+        <br>
+        <a href="/newuser">Click here: New user registration</a>
     </div>
 
 </body>

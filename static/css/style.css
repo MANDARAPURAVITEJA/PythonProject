@@ -5,7 +5,8 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #ec5b5b;
+    background-image:url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.3plearning.com%2Fblog%2F20-student-engagement-strategies-captivating-classroom%2F&psig=AOvVaw1tT-00Lxj8VuZqxNNHwkHR&ust=1704114730617000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKC9iqPguYMDFQAAAAAdAAAAABAD");
+    background-color: #c9e3de;
 }
 
 .login-container {
@@ -22,7 +23,7 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 50%;
     padding: 8px;
     margin-bottom: 12px;
     box-sizing: border-box;
@@ -31,6 +32,7 @@ input {
 }
 
 button {
+    display:inline-table;
     background-color: #4caf50;
     color: #fff;
     padding: 10px 15px;

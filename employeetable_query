@@ -1,0 +1,31 @@
+-- Create the employee table
+CREATE TABLE employee (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10, 2),
+    hire_date DATE
+);
+
+-- Insert sample data into the employee table
+INSERT INTO employee (first_name, last_name, salary, hire_date)
+VALUES
+    ('John', 'Doe', 50000.00, '2022-01-15'),
+    ('Jane', 'Smith', 60000.00, '2021-08-22'),
+    ('Bob', 'Johnson', 75000.00, '2022-03-10'),
+    ('Alice', 'Williams', 55000.00, '2021-11-05'),
+    ('Charlie', 'Brown', 65000.00, '2022-05-18');
+
+-- Insert additional sample data into the employee table
+INSERT INTO employee (first_name, last_name, salary, hire_date)
+VALUES
+    ('Michael', 'Johnson', 72000.00, '2022-02-28'),
+    ('Emma', 'Davis', 58000.00, '2021-12-10'),
+    ('Daniel', 'Martinez', 68000.00, '2021-10-03'),
+    ('Olivia', 'Taylor', 62000.00, '2022-04-15'),
+    ('William', 'Jones', 80000.00, '2021-09-20'),
+    ('Sophia', 'Anderson', 54000.00, '2022-06-12'),
+    ('Matthew', 'Wilson', 67000.00, '2021-07-25'),
+    ('Ava', 'Moore', 71000.00, '2022-01-05'),
+    ('James', 'Thomas', 75000.00, '2022-03-30'),
+    ('Emily', 'White', 60000.00, '2021-11-15');
