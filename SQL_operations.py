@@ -106,4 +106,38 @@ def homepage_data():
 
 
 
+def resetpassword1(emailid,security_question):
+    db_obj=pymysql.connect(host="localhost",user="root",password="root"); # to Connect to SQl server
+    print(db_obj)
+    cursor_obj=db_obj.cursor(); # to create a cursor on sql server
+
+    db_query_use = """use User"""
+    retrieve_query= """select emailid,security_question from user_details
+    where emailid='"""+str(emailid)+"' and security_question='"+str(security_question)+"';"
+    
+    query=cursor_obj.execute(db_query_use)
+    query=cursor_obj.execute(retrieve_query);print(query)
+
+    result = cursor_obj.fetchone();print(result)
+    
+    # Close the cursor
+    cursor_obj.close()
+    
+    # If the result is not None, the database exists
+    return result is not None
+
+def updatepassword(emailid,NewPassword):
+    db_obj=pymysql.connect(host="localhost",user="root",password="root"); # to Connect to SQl server
+    print(db_obj)
+    cursor_obj=db_obj.cursor(); # to create a cursor on sql server
+
+    db_query_use = """use User"""
+    update_query= """update user_details set password='"""+str(NewPassword)+"' where emailid='"+str(emailid)+"';"
+    # update_query = """update user_details set password="Password12$%&&" where emailid="meghana@gmail.com";
+    # """
+
+    query=cursor_obj.execute(db_query_use);print(query)
+    query=cursor_obj.execute(update_query);print(query)
+    db_obj.commit() # for savings the changes to database
+    db_obj.close()  # to close the database connection
 

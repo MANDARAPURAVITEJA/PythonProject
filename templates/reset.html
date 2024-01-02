@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Creation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="login-container">
+    <h1>Forget password</h1>
+
+    <form action="/reset" method="post">
+        <fieldset>
+            <legend>Enter details:</legend>
+
+            <label for="emailid">Your Email Address:</label>
+            <input type="text" id="emailid" name="EMAILID" required><br><br>
+
+            <label for="security_question">Enter your favorite place name:</label>
+            <input type="text" id="security_question" name="SECURITY_QUESTION" required><br><br>
+
+            <label for="submitBtn"></label>
+            <button type="submit" id="submitBtn">Validate</button><br><br>
+
+
+
+        <br>
+        <a href="/">Back to login page</a>
+        <h3 class="context">{{context}}</h3>
+        </fieldset>
+    </form>
+    </div>
+</body>
+</html>
