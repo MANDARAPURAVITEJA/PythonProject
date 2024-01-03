@@ -28,23 +28,7 @@ def login():
         flash('Invalid username or password. Please try again.', 'danger')
         return redirect(url_for('home'))
     
-# @app.route('/resetpassword', methods=['POST','GET'])
-# def resetpassword():
-#     try:
-#         emailid = request.form['emailid']
-#         security_question = request.form['security_question']
-
-#         if sql_obj.resetpassword1(emailid=emailid,security_question=security_question):
-#             flash('Reset successful!', 'success')
-#             return redirect(url_for('homepage'))
-#         else:
-#             flash('Invalid username or Place name. Please try again.', 'danger')
-#             return redirect(url_for('home'))
-#     except Exception as e:
-#         print('The Exception message is: ',e)
-#         context="Some issue with the code, details not saved. Contact IT Support"
-#         return render_template('resetpassword.html',context=context)
-
+    
 @app.route('/newuser',methods=['POST','GET']) #
 def index():
     if request.method == 'POST':

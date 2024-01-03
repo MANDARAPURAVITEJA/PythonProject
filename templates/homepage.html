@@ -61,18 +61,6 @@
     <a href="/">Back to login page</a>
 
     <script>
-        // Load table names into the dropdown
-        $(document).ready(function () {
-            $.get('/get_columns?table_name=employee', function (columns) {
-                // Load column names into the table
-                var headerRow = '<tr>';
-                for (var i = 0; i < columns.length; i++) {
-                    headerRow += '<th>' + columns[i] + '</th>';
-                }
-                headerRow += '</tr>';
-                $('#dataTable').append(headerRow);
-            });
-        });
 
 
         function applyFilter() {

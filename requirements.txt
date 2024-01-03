@@ -1,5 +1,4 @@
 Flask
-flask_bcrypt
 pymysql
 beautifulsoup4
 bs4==0.0.1
